@@ -8,14 +8,14 @@ pipeline {
                 }
             }
         }
-        stage ('Teste') {
+        stage ('Unit Test') {
             steps {
                 withMaven {
                     sh 'mvn test'
                 }
             }
         }
-        stage ('qualidade') {
+        stage ('Sonar') {
             steps {
                 withMaven {
                     sh 'mvn sonar:sonar'
